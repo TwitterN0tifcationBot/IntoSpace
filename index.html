@@ -3,62 +3,72 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Signup & Login</title>
+  <title>Home</title>
   <style>
     body {
       font-family: Arial, sans-serif;
+      margin: 0;
+      display: flex;
+      height: 100vh;
+    }
+    .sidebar {
+      width: 80px;
+      background: #2c2f33;
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .server-icon {
+      width: 50px;
+      height: 50px;
+      background: #7289da;
+      border-radius: 50%;
+      margin: 10px 0;
+      cursor: pointer;
+    }
+    .add-server {
+      width: 50px;
+      height: 50px;
+      background: #7289da;
+      border-radius: 50%;
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 100vh;
-      background-color: #f4f4f4;
-    }
-    .container {
-      background: white;
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-      width: 300px;
-    }
-    h2 {
-      text-align: center;
-    }
-    input {
-      width: 100%;
-      padding: 10px;
-      margin: 10px 0;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-    }
-    button {
-      width: 100%;
-      padding: 10px;
-      background-color: #007bff;
       color: white;
-      border: none;
-      border-radius: 4px;
+      font-size: 24px;
       cursor: pointer;
     }
-    button:hover {
-      background-color: #0056b3;
+    .main {
+      flex: 1;
+      background: #36393f;
+      color: white;
+      padding: 20px;
     }
-    a {
-      color: #007bff;
-      text-decoration: none;
-      display: block;
-      text-align: center;
-      margin-top: 10px;
+    .top-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+    .settings-icon {
+      font-size: 24px;
+      cursor: pointer;
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h2>Login</h2>
-    <input type="text" placeholder="Username/Email">
-    <input type="password" placeholder="Password">
-    <button>Login</button>
-    <a href="#">Forgot Password?</a>
-    <a href="#">New User? Sign Up Here</a>
+  <div class="sidebar">
+    <div class="server-icon"></div>
+    <div class="add-server">+</div>
+  </div>
+  <div class="main">
+    <div class="top-bar">
+      <h2>Home</h2>
+      <div class="settings-icon">⚙️</div>
+    </div>
+    <p>Welcome to your home page!</p>
   </div>
 </body>
 </html>
+
