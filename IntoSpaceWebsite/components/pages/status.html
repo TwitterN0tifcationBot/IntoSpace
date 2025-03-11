@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>System Status</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background: #36393f;
+      color: white;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .status-container {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .status-card {
+      background: #2c2f33;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .status-card h2 {
+      margin-bottom: 10px;
+    }
+    .status-card p {
+      margin: 5px 0;
+    }
+    .status-indicator {
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      margin-right: 5px;
+    }
+    .status-indicator.online {
+      background: #43b581;
+    }
+    .status-indicator.offline {
+      background: #f04747;
+    }
+  </style>
+</head>
+<body>
+  <h1>System Status</h1>
+  <div class="status-container">
+    <div class="status-card">
+      <h2>Server Status</h2>
+      <p><span class="status-indicator online"></span> Operational</p>
+      <p>Uptime: <span id="uptime">Loading...</span></p>
+    </div>
+    <div class="status-card">
+      <h2>Active Users</h2>
+      <p>Total Users: <span id="total-users">Loading...</span></p>
+      <p>Online Users: <span id="online-users">Loading...</span></p>
+    </div>
+    <div class="status-card">
+      <h2>Ongoing Issues</h2>
+      <p id="issues">No issues reported.</p>
+    </div>
+  </div>
+
+  <script>
+    // Simulate dynamic data
+    const uptimeElement = document.getElementById("uptime");
+    const totalUsersElement = document.getElementById("total-users");
+    const onlineUsersElement = document.getElementById("online-users");
+    const issuesElement = document.getElementById("issues");
+
+    function updateStatus() {
+      // Simulate server uptime
+      const startTime = new Date("2025-03-01T00:00:00Z");
+      const now = new Date();
+      const uptime = Math.floor((now - startTime) / 1000 / 60 / 60); // in hours
+      uptimeElement.textContent = `${uptime} hours`;
+
+      // Simulate active users
+      const totalUsers = 1234;
+      const onlineUsers = Math.floor(Math.random() * totalUsers);
+      totalUsersElement.textContent = totalUsers;
+      onlineUsersElement.textContent = onlineUsers;
+
+      // Simulate issues
+      const issues = ["No issues reported."];
+      issuesElement.textContent = issues.join(", ");
+    }
+
+    // Update status every 5 seconds
+    updateStatus();
+    setInterval(updateStatus, 5000);
+  </script>
+</body>
+</html>
